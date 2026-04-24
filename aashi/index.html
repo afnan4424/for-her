@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Surprise</title>
+    <style>
+        /* High-quality Earth background */
+        html { 
+            background: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2072&auto=format&fit=crop') no-repeat center center fixed; 
+            background-size: cover;
+            background-color: black; 
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        /* Dark overlay to make everything readable */
+        .overlay {
+            background: rgba(0, 0, 0, 0.5);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 10vw, 4rem);
+            color: #ff3333;
+            text-shadow: 0 0 20px rgba(255, 51, 51, 0.8);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #ffffff;
+            font-weight: 300;
+        }
+
+        /* Modern Red Button */
+        .btn {
+            background: #ff3333;
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 51, 51, 0.4);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            background: #cc0000;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 51, 51, 0.6);
+        }
+
+        /* The Surprise Section */
+        #gift-area {
+            display: none;
+            margin-top: 40px;
+            animation: slideIn 1.5s ease;
+        }
+
+        .image-container {
+            border: 5px solid #ff3333;
+            border-radius: 10px;
+            background: black;
+            max-width: 500px;
+            margin: 0 auto;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .caption {
+            font-size: 2.5rem;
+            color: #ff3333;
+            font-weight: 900;
+            margin-top: 20px;
+            text-shadow: 2px 2px 0px #000;
+            font-style: italic;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(100px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay">
+        <h1>FOR THAT ONE FRIEND</h1>
+        <p>Her name is</p>
+        
+        <button class="btn" onclick="reveal()">Reveal the Truth</button>
+
+        <div id="gift-area">
+            <div class="image-container">
+                <img src="image.jpeg" alt="Surprise">
+            </div>
+            <div class="caption">bahahahaha</div>
+        </div>
+    </div>
+
+    <script>
+        function reveal() {
+            const gift = document.getElementById('gift-area');
+            gift.style.display = 'block';
+            
+            // Wait a tiny bit for the image to show, then scroll
+            setTimeout(() => {
+                window.scrollTo({ 
+                    top: gift.offsetTop, 
+                    behavior: 'smooth' 
+                });
+            }, 100);
+        }
+    </script>
+
+</body>
+</html>
